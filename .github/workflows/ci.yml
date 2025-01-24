@@ -1,0 +1,20 @@
+name: Simple CI/CD Pipeline
+
+# Определяем событие, которое будет запускать workflow
+on:
+  push:
+    branches:
+      - main  # Запускать при пуше в ветку main
+
+# Определяем работу (job)
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Операционная система для выполнения
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Проверка исходного кода
+
+      - name: Display CI/CD message
+        run: echo "CI/CD!"  # Команда для вывода сообщения в консоль
+
